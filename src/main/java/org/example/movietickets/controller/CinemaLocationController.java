@@ -2,6 +2,7 @@ package org.example.movietickets.controller;
 
 import org.example.movietickets.dto.CinemaLocationDto;
 import org.example.movietickets.service.CinemaLocationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,11 +17,8 @@ import java.util.List;
 @CrossOrigin("*")
 public class CinemaLocationController {
 
-    private final CinemaLocationService service;
-
-    public CinemaLocationController(CinemaLocationService service) {
-        this.service = service;
-    }
+    @Autowired
+    CinemaLocationService service;
 
     @GetMapping("/location")
     public ResponseEntity<List<CinemaLocationDto>> getAllCinemaLocations() {
