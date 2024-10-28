@@ -22,14 +22,16 @@ public class MovieCardService {
 
     public List<MovieCardDto> findMoviesByLocation(String location) {
         String trimmedLocation = location.trim();
-        List<MovieCard> movieCardList = movieCardRepository.findMoviesByLocation(trimmedLocation);
-
         if (!cinemaLocationRepository.existsByLocation(trimmedLocation)) {
             throw new LocationNotFoundException(trimmedLocation);
-        } else if (movieCardList.isEmpty()) {
+        }
+
+        List<MovieCard> movieCardList = movieCardRepository.findMoviesByLocation(trimmedLocation);
+        if (movieCardList.isEmpty()) {
             throw new EntityNotFoundException();
         }
 
         return MovieCardMapper.INSTANCE.toMovieCardDtoList(movieCardList);
     }
+
 }
