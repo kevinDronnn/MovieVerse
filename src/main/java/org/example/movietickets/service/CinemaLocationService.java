@@ -17,4 +17,8 @@ public class CinemaLocationService {
     public List<CinemaLocationDto> findAll() {
         return CinemaLocationMapper.INSTANCE.cinemaLocationToCinemaLocationDto(cinemaLocationRepository.findAll());
     }
+
+    public boolean existsByLocation(String location) {
+        return cinemaLocationRepository.existsByLocation(location);
+    }
 }
