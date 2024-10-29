@@ -9,17 +9,19 @@ public class ScreeningDto {
     private int cinemaLocationId;
     private String cinemaLocationName;
     private Timestamp screeningTime;
+    private Timestamp startDate;
 
     public ScreeningDto() {
     }
 
-    public ScreeningDto(int id, int movieId, String movieTitle, int cinemaLocationId, String cinemaLocationName, Timestamp screeningTime) {
+    public ScreeningDto(int id, int movieId, String movieTitle, int cinemaLocationId, String cinemaLocationName, Timestamp screeningTime, Timestamp startDate) {
         this.id = id;
         this.movieId = movieId;
         this.movieTitle = movieTitle;
         this.cinemaLocationId = cinemaLocationId;
         this.cinemaLocationName = cinemaLocationName;
         this.screeningTime = screeningTime;
+        this.startDate = startDate;
     }
 
     public int getId() {
@@ -70,6 +72,14 @@ public class ScreeningDto {
         this.screeningTime = screeningTime;
     }
 
+    public Timestamp getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Timestamp startDate) {
+        this.startDate = startDate;
+    }
+
     @Override
     public String toString() {
         return "ScreeningDto{" +
@@ -79,6 +89,7 @@ public class ScreeningDto {
                 ", cinemaLocationId=" + cinemaLocationId +
                 ", cinemaLocationName='" + cinemaLocationName + '\'' +
                 ", screeningTime=" + screeningTime +
+                ", startDate=" + startDate +
                 '}';
     }
 }

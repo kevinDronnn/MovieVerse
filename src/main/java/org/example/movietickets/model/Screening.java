@@ -23,13 +23,17 @@ public class Screening {
     @Column(name = "screening_time", nullable = false)
     private Timestamp screeningTime;
 
+    @Column(name = "start_date", nullable = false)
+    private Timestamp startDate;
+
     public Screening() {
     }
 
-    public Screening(MovieCard movie, CinemaLocation cinemaLocation, Timestamp screeningTime) {
+    public Screening(MovieCard movie, CinemaLocation cinemaLocation, Timestamp screeningTime, Timestamp startDate) {
         this.movie = movie;
         this.cinemaLocation = cinemaLocation;
         this.screeningTime = screeningTime;
+        this.startDate = startDate;
     }
 
     public int getId() {
@@ -64,6 +68,14 @@ public class Screening {
         this.screeningTime = screeningTime;
     }
 
+    public Timestamp getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Timestamp startDate) {
+        this.startDate = startDate;
+    }
+
     @Override
     public String toString() {
         return "Screening{" +
@@ -71,6 +83,7 @@ public class Screening {
                 ", movie=" + movie +
                 ", cinemaLocation=" + cinemaLocation +
                 ", screeningTime=" + screeningTime +
+                ", startDate=" + startDate +
                 '}';
     }
 }
