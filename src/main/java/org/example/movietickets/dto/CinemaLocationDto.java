@@ -1,5 +1,10 @@
 package org.example.movietickets.dto;
-
+/**
+ * Dto for locations of cinemas
+ * @author Artem Voroshylin
+ * @version 1.0
+ * @since 1.0
+ */
 public class CinemaLocationDto {
 
     private String location;

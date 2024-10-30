@@ -1,7 +1,12 @@
 package org.example.movietickets.model;
 
 import jakarta.persistence.*;
-
+/**
+ * Entity for movie
+ * @author Artem Voroshylin
+ * @version 1.1
+ * @since 1.0
+ */
 @Entity
 @Table(name = "movie")
 public class MovieCard {

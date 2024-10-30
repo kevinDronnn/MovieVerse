@@ -11,7 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**
+ * Service for movie
+ * @author Artem Voroshylin
+ * @version 1.1
+ * @since 1.0
+ */
 @Service
 public class MovieCardService {
     @Autowired
@@ -20,6 +25,16 @@ public class MovieCardService {
     @Autowired
     private CinemaLocationRepository cinemaLocationRepository;
 
+    /**
+     * Method is finding movies by cities, but firstly checking if city exists
+     * after that return mapped list
+     * @param location of current cinema
+     * @return list of movies dto`s
+     * @see CinemaLocationRepository
+     * @see LocationNotFoundException
+     * @see MovieCardRepository
+     * @see org.example.movietickets.mapper.CinemaLocationMapper
+     */
     public List<MovieCardDto> findMoviesByLocation(String location) {
         String trimmedLocation = location.trim();
         if (!cinemaLocationRepository.existsByLocation(trimmedLocation)) {

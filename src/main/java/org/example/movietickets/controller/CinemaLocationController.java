@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Controller for locations of cinemas
+ * @author Artem Voroshylin
+ * @version 1.0
+ * @since 1.0
+ */
 @RestController
 @RequestMapping("api/cinema")
 @CrossOrigin("*")
@@ -20,6 +26,11 @@ public class CinemaLocationController {
     @Autowired
     CinemaLocationService service;
 
+    /**
+     * find all locations
+     * @return list of cinema locations dto`s and return httpStatus.Ok
+     * @see CinemaLocationService
+     */
     @GetMapping("/location")
     public ResponseEntity<List<CinemaLocationDto>> getAllCinemaLocations() {
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);

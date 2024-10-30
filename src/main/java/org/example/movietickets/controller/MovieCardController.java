@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controller for movies
+ * @author Artem Voroshylin
+ * @version 1.0
+ * @since 1.0
+ */
 @RestController
 @CrossOrigin("*")
 @RequestMapping("api/cinema")
@@ -16,6 +22,12 @@ public class MovieCardController {
     @Autowired
     private MovieCardService movieCardService;
 
+    /**
+     * This method is using for searching movies by city
+     * @param location is using for searching movies by city
+     * @return list of movies dto`s and httpStatus.Ok
+     * @see MovieCardService
+     */
     @GetMapping("/movies")
     public ResponseEntity<List<MovieCardDto>> findMoviesByLocation(@RequestParam String location) {
         List<MovieCardDto> movies = movieCardService.findMoviesByLocation(location);
