@@ -15,9 +15,13 @@ public interface ScreeningMapper {
     @Mapping(source = "movie.title", target = "movieTitle")
     @Mapping(source = "cinemaLocation.id", target = "cinemaLocationId")
     @Mapping(source = "cinemaLocation.location", target = "cinemaLocationName")
+    @Mapping(source = "startDate", target = "startDate")
+    @Mapping(source = "endDate", target = "endDate")
     ScreeningDto screeningToScreeningDto(Screening screening);
 
     @Mapping(source = "movieId", target = "movie.id")
     @Mapping(source = "cinemaLocationId", target = "cinemaLocation.id")
+    @Mapping(source = "startDate", target = "startDate")
+    @Mapping(source = "endDate", target = "endDate")
     Screening screeningDtoToScreening(ScreeningDto screeningDto);
 }

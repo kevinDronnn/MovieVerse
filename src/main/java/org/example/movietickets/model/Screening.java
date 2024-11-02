@@ -27,19 +27,19 @@ public class Screening {
     @JoinColumn(name = "cinema_location_id", nullable = false)
     private CinemaLocation cinemaLocation;
 
-    @Column(name = "screening_time", nullable = false)
-    private Timestamp screeningTime;
-
     @Column(name = "start_date", nullable = false)
     private Timestamp startDate;
+
+    @Column(name = "end_date", nullable = false)
+    private Timestamp endDate;
 
     public Screening() {
     }
 
-    public Screening(MovieCard movie, CinemaLocation cinemaLocation, Timestamp screeningTime, Timestamp startDate) {
+    public Screening(MovieCard movie, CinemaLocation cinemaLocation, Timestamp endDate, Timestamp startDate) {
         this.movie = movie;
         this.cinemaLocation = cinemaLocation;
-        this.screeningTime = screeningTime;
+        this.endDate = endDate;
         this.startDate = startDate;
     }
 
@@ -67,12 +67,12 @@ public class Screening {
         this.cinemaLocation = cinemaLocation;
     }
 
-    public Timestamp getScreeningTime() {
-        return screeningTime;
+    public Timestamp getEndDate() {
+        return endDate;
     }
 
-    public void setScreeningTime(Timestamp screeningTime) {
-        this.screeningTime = screeningTime;
+    public void setEndDate(Timestamp screeningTime) {
+        this.endDate = screeningTime;
     }
 
     public Timestamp getStartDate() {
@@ -83,14 +83,15 @@ public class Screening {
         this.startDate = startDate;
     }
 
+
     @Override
     public String toString() {
         return "Screening{" +
                 "id=" + id +
                 ", movie=" + movie +
                 ", cinemaLocation=" + cinemaLocation +
-                ", screeningTime=" + screeningTime +
                 ", startDate=" + startDate +
+                ", endDate=" + endDate +
                 '}';
     }
 }

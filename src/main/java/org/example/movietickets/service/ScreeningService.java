@@ -43,7 +43,8 @@ public class ScreeningService {
         Screening existingScreening = screeningRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Screening with id " + id + " not found"));
 
-        existingScreening.setScreeningTime(screening.getScreeningTime());
+        existingScreening.setEndDate(screening.getEndDate());
+        existingScreening.setStartDate(screening.getStartDate());
 
         return ScreeningMapper.INSTANCE.screeningToScreeningDto(screeningRepository.save(existingScreening));
     }

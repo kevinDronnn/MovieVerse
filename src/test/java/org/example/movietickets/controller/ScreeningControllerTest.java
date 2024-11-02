@@ -47,7 +47,7 @@ class ScreeningControllerTest {
         screening.getMovie().setId(1);
         screening.setCinemaLocation(new CinemaLocation());
         screening.getCinemaLocation().setId(1);
-        screening.setScreeningTime(new Timestamp(System.currentTimeMillis()));
+        screening.setEndDate(new Timestamp(System.currentTimeMillis()));
     }
 
     @DisplayName("get screening")
