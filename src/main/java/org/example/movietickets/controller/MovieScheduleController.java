@@ -25,12 +25,12 @@ public class MovieScheduleController {
     }
 
     @PostMapping("/saveMovieSchedule")
-    public ResponseEntity<MovieScheduleDto> addMovieSchedule(MovieSchedule movieSchedule) {
+    public ResponseEntity<MovieScheduleDto> addMovieSchedule(@RequestBody MovieSchedule movieSchedule) {
         return ResponseEntity.status(HttpStatus.CREATED).body(movieScheduleService.saveSchedule(movieSchedule));
     }
 
     @PutMapping("/updateMovieSchedule")
-    public ResponseEntity<MovieScheduleDto> updateMovieSchedule(MovieSchedule movieSchedule) {
+    public ResponseEntity<MovieScheduleDto> updateMovieSchedule(@RequestBody MovieSchedule movieSchedule) {
         return ResponseEntity.status(HttpStatus.OK).body(movieScheduleService.updateSchedule(movieSchedule));
     }
 
