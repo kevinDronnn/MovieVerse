@@ -3,13 +3,15 @@ package org.example.movietickets.model;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+
 /**
  * Entity for screening time
+ *
  * @author Artem Voroshylin
  * @version 1.1
- * @since 1.1
  * @see MovieCard
  * @see CinemaLocation
+ * @since 1.1
  */
 @Entity
 @Table(name = "screening")

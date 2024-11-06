@@ -1,6 +1,8 @@
 package org.example.movietickets.dto;
+
 /**
  * Dto for movie
+ *
  * @author Artem Voroshylin
  * @version 1.1
  * @since 1.0

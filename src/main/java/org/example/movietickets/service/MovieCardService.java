@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 /**
  * Service for movie
+ *
  * @author Artem Voroshylin
  * @version 1.1
  * @since 1.0
@@ -28,6 +30,7 @@ public class MovieCardService {
     /**
      * Method is finding movies by cities, but firstly checking if city exists
      * after that return mapped list
+     *
      * @param location of current cinema
      * @return list of movies dto`s
      * @see CinemaLocationRepository

@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Controller for movies
+ *
  * @author Artem Voroshylin
  * @version 1.0
  * @since 1.0
@@ -24,6 +25,7 @@ public class MovieCardController {
 
     /**
      * This method is using for searching movies by city
+     *
      * @param location is using for searching movies by city
      * @return list of movies dto`s and httpStatus.Ok
      * @see MovieCardService

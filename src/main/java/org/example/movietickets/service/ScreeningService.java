@@ -8,8 +8,10 @@ import org.example.movietickets.model.Screening;
 import org.example.movietickets.repository.ScreeningRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 /**
  * Service for screenings
+ *
  * @author Artem Voroshylin
  * @version 1.1
  * @since 1.1
@@ -22,6 +24,7 @@ public class ScreeningService {
 
     /**
      * Method for saving mapped screening
+     *
      * @param screening that we get from request
      * @return mapped screening dto
      * @see ScreeningMapper
@@ -33,8 +36,9 @@ public class ScreeningService {
 
     /**
      * Method for updating mapped screening after checking of existing
+     *
      * @param screening new time and date
-     * @param id of screening what we want to update
+     * @param id        of screening what we want to update
      * @return screening dto
      * @see ScreeningMapper
      */
@@ -51,8 +55,9 @@ public class ScreeningService {
 
     /**
      * Method return screening date for movie by it id and id of cinema
+     *
      * @param locationId of location what we need
-     * @param movieId of movie what we need
+     * @param movieId    of movie what we need
      * @return mapped screening dto
      * @see ScreeningRepository
      * @see ScreeningMapper

@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * Controller for locations of cinemas
+ *
  * @author Artem Voroshylin
  * @version 1.0
  * @since 1.0
@@ -28,6 +29,7 @@ public class CinemaLocationController {
 
     /**
      * find all locations
+     *
      * @return list of cinema locations dto`s and return httpStatus.Ok
      * @see CinemaLocationService
      */

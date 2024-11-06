@@ -4,6 +4,13 @@ import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 
+/**
+ * Class for MovieSchedule
+ *
+ * @author Artem Voroshylin
+ * @version 1.0
+ * @since 1.4
+ */
 @Entity
 @Table(name = "movie_screening_schedule")
 public class MovieSchedule {

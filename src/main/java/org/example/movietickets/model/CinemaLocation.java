@@ -1,8 +1,10 @@
 package org.example.movietickets.model;
 
 import jakarta.persistence.*;
+
 /**
  * Entity for locations of cinemas
+ *
  * @author Artem Voroshylin
  * @version 1.0
  * @since 1.0

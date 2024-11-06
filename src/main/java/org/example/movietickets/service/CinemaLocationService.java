@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 /**
  * Service for cinema location
+ *
  * @author Artem Voroshylin
  * @version 1.1
  * @since 1.0
@@ -21,6 +23,7 @@ public class CinemaLocationService {
 
     /**
      * Method for finding all cinemas locations
+     *
      * @return list of mapped cinemas dto`s
      * @see CinemaLocationMapper
      */
@@ -30,6 +33,7 @@ public class CinemaLocationService {
 
     /**
      * Method for checking existing cinema location
+     *
      * @param location name of the city
      * @return true if we have current city in database
      * @see CinemaLocationRepository
