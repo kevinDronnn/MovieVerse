@@ -61,4 +61,14 @@ public class ScreeningController {
     public ResponseEntity<ScreeningDto> updateScreening(@PathVariable int locationId, @PathVariable int movieId) {
         return ResponseEntity.status(HttpStatus.OK).body(screeningService.findScreeningByLocationIdAndMovieId(locationId, movieId));
     }
+
+    /**
+     * Method delete screening
+     *
+     * @param id of screening
+     */
+    @DeleteMapping("/deleteScreening/{id}")
+    public void deleteScreening(@PathVariable int id) {
+        screeningService.deleteScreening(id);
+    }
 }

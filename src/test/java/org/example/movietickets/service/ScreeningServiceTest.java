@@ -100,4 +100,14 @@ class ScreeningServiceTest {
         verify(screeningRepository, times(1)).findById(screening.getId());
     }
 
+    @DisplayName("delete Screening")
+    @Test
+    void testDeleteScreening_returnsNothing() {
+        when(screeningRepository.findById(screening.getId())).thenReturn(Optional.of(screening));
+
+        screeningService.deleteScreening(screening.getId());
+
+        verify(screeningRepository, times(1)).delete(screening);
+    }
+
 }

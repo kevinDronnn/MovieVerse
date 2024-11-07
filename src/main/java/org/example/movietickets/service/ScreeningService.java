@@ -40,6 +40,7 @@ public class ScreeningService {
      * @param screening new time and date
      * @param id        of screening what we want to update
      * @return screening dto
+     * @exception EntityNotFoundException if entity not found
      * @see ScreeningMapper
      */
     @Transactional
@@ -59,9 +60,9 @@ public class ScreeningService {
      * @param locationId of location what we need
      * @param movieId    of movie what we need
      * @return mapped screening dto
+     * @exception EntityNotFoundException if entity not found
      * @see ScreeningRepository
      * @see ScreeningMapper
-     * @see EntityNotFoundException
      */
     public ScreeningDto findScreeningByLocationIdAndMovieId(int locationId, int movieId) {
         Screening existingScreening = screeningRepository.findByCinemaLocation_IdAndMovie_Id(locationId, movieId);
@@ -70,6 +71,18 @@ public class ScreeningService {
         } else {
             throw new EntityNotFoundException("Screening not found for location ID " + locationId + " and movie ID " + movieId);
         }
+    }
+
+    /**
+     * Method delete screening
+     * @param id of screening
+     * @exception EntityNotFoundException if entity not found
+     */
+    public void deleteScreening(int id){
+        Screening screening = screeningRepository
+                .findById(id).orElseThrow(() -> new EntityNotFoundException("Screening not found for id " + id));
+
+        screeningRepository.delete(screening);
     }
 
 }

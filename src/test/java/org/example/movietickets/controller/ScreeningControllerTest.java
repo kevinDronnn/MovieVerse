@@ -104,4 +104,19 @@ class ScreeningControllerTest {
         assertEquals(200, result.getResponse().getStatus());
     }
 
+    @DisplayName("delete Screening")
+    @Test
+    void testDeleteScreening_returnsNothing() throws Exception {
+        doNothing().when(screeningService).deleteScreening(screening.getId());
+
+        RequestBuilder requestBuilder = MockMvcRequestBuilders
+                .delete("/api/cinema/deleteScreening/" + screening.getId())
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON);
+
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+
+        verify(screeningService, times(1)).deleteScreening(screening.getId());
+    }
+
 }

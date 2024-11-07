@@ -29,6 +29,8 @@ public class MovieScheduleService {
      * @param movieId    id of movie
      * @param locationId if of cinema
      * @return list of MovieScheduleDto
+     * @throws EntityNotFoundException if entity not found
+     * @see MovieScheduleMapper
      */
     public List<MovieScheduleDto> getSchedulesByMovieIdAndLocationId(int movieId, int locationId) {
         List<MovieSchedule> movieScheduleList = movieScheduleRepository.findByMovieIdAndCinemaLocationId(movieId, locationId);
@@ -45,6 +47,7 @@ public class MovieScheduleService {
      *
      * @param movieSchedule new schedule
      * @return new MovieScheduleDto
+     * @see MovieScheduleMapper
      */
     @Transactional
     public MovieScheduleDto saveSchedule(MovieSchedule movieSchedule) {
@@ -58,6 +61,8 @@ public class MovieScheduleService {
      *
      * @param movieSchedule new data for schedule
      * @return MovieScheduleDto
+     * @throws EntityNotFoundException if entity not found
+     * @see MovieScheduleMapper
      */
     @Transactional
     public MovieScheduleDto updateSchedule(MovieSchedule movieSchedule) {
@@ -73,6 +78,7 @@ public class MovieScheduleService {
      * Deleting schedule if it exists
      *
      * @param id schedule
+     * @throws EntityNotFoundException if entity not found
      */
     public void deleteSchedule(int id) {
         MovieSchedule schedule = movieScheduleRepository.findById(id).get();
