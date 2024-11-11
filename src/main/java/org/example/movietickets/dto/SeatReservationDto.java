@@ -2,6 +2,13 @@ package org.example.movietickets.dto;
 
 import java.sql.Timestamp;
 
+/**
+ * Dto for SeatReservation
+ *
+ * @author Artem Voroshylin
+ * @version 1.0
+ * @since 1.5
+ */
 public class SeatReservationDto {
     private int id;
     private int movieScheduleId;

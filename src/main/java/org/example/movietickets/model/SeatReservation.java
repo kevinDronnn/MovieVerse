@@ -4,6 +4,14 @@ import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 
+/**
+ * Entity for SeatReservation
+ *
+ * @author Artem Voroshylin
+ * @version 1.0
+ * @see MovieSchedule
+ * @since 1.5
+ */
 @Entity
 @Table(name = "seat_reservation")
 public class SeatReservation {
